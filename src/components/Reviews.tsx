@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Modal from "@/components/ui/Modal";
 import Rating from "@/components/ui/Rating";
@@ -11,21 +11,22 @@ const Reviews = () => {
     const [nickname, setNickname] = useState('');
     const [reviewText, setReviewText] = useState('');
     const [error, setError] = useState('');
+    const [reviews, setReviews] = useState<{ rating: number; nickname: string; review: string; }[]>([]);
+
+    useEffect(() => {
+        const storedReviews = localStorage.getItem('reviews');
+        setReviews(storedReviews ? JSON.parse(storedReviews) : [
+            { rating: 5, nickname: "EpicGamer92", review: "SaturnSwapper completely changed the way I play Fortnite. The interface is super intuitive, and it takes just a few seconds to swap skins. It's a must-have for anyone looking to spice up their game." },
+            { rating: 4.5 , nickname: "Frostbite_x", review: "SaturnSwapper is a solid tool. I like the variety of skins it offers, but sometimes it takes a while to load the new skins. Still, it's worth the wait, and it definitely adds a lot of fun to my Fortnite sessions." },
+            { rating: 5, nickname: "ProPlayerX", review: "I've tried several skin changers, but SaturnSwapper is hands down the best. It’s fast, reliable, and there’s no lag. I can change skins mid-game, and it works flawlessly every time. Highly recommend!" },
+            { rating: 4, nickname: "SkyHighGamer", review: "SaturnSwapper is great, but it could be even better with more customization options. Still, it’s very easy to use and has a wide selection of skins. I really enjoy using it for my Fortnite matches!" }
+        ]);
+    }, []);
 
     const onClosed = () => {
         setIsOpen(false);
         setError('');
     };
-
-    const [reviews, setReviews] = useState(() => {
-        const storedReviews = localStorage.getItem('reviews');
-        return storedReviews ? JSON.parse(storedReviews) : [
-            { rating: 5, nickname: "EpicGamer92", review: "SaturnSwapper completely changed the way I play Fortnite. The interface is super intuitive, and it takes just a few seconds to swap skins. It's a must-have for anyone looking to spice up their game." },
-            { rating: 4.5 , nickname: "Frostbite_x", review: "SaturnSwapper is a solid tool. I like the variety of skins it offers, but sometimes it takes a while to load the new skins. Still, it's worth the wait, and it definitely adds a lot of fun to my Fortnite sessions." },
-            { rating: 5, nickname: "ProPlayerX", review: "I've tried several skin changers, but SaturnSwapper is hands down the best. It’s fast, reliable, and there’s no lag. I can change skins mid-game, and it works flawlessly every time. Highly recommend!" },
-            { rating: 4, nickname: "SkyHighGamer", review: "SaturnSwapper is great, but it could be even better with more customization options. Still, it’s very easy to use and has a wide selection of skins. I really enjoy using it for my Fortnite matches!" }
-        ];
-    });
 
     const handleSubmit = () => {
         if (nickname.trim() === '' || reviewText.trim() === '' || rating === 0) {
