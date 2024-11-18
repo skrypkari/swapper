@@ -1,0 +1,76 @@
+'use client';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
+const Advantages = () => {
+    const items = [
+        {
+            icon: '/custom.svg',
+            title: 'Customization',
+            description: 'Allows players to personalize their in-game appearance with a variety of skins, expressing unique styles and creativity.'
+        },
+        {
+            icon: '/gamepad.svg',
+            title: 'Experience',
+            description: 'New skins can make gameplay more exciting, motivating players to keep coming back for a fresh visual experience.'
+        },
+        {
+            icon: '/lock.svg',
+            title: 'Unlock skins',
+            description: 'Using rare skins can boost your confidence, making you feel part of an elite group with exclusive content.'
+        },
+        {
+            icon: '/confidence.svg',
+            title: 'Better Confidence',
+            description: 'Using rare skins can boost your confidence, making you feel part of an elite group with exclusive content.'
+        }
+    ];
+
+    const leftVariants = {
+        hidden: { opacity: 0, x: 20 },
+        visible: { opacity: 1, x: 0 }
+    };
+
+    const rightVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
+
+    return (
+        <>
+            <section id="advantages" className="px-1 pt-[110px] min-w-screen cont mx-auto flex gap-5 flex-col xl:flex-row items-center text-center xl:text-left xl:items-start justify-between">
+                <motion.div
+                    className="max-w-[480px]"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 1 }}
+                    variants={leftVariants}
+                >
+                    <h2 className="text-[36px] md:text-[48px] font-bold">Advantages</h2>
+                    <p className="text-[24px] md:text-[32px] font-bold mt-[50px]">Why Choose<br />SaturnSwapper?</p>
+                    <p className="md:text-[20px] mt-[20px]">Unlimited skins, easy setup, and top security—customize your Fortnite experience with no risk to your account!</p>
+                    <button className="w-full hover:bg-second hover:text-white transition-all bg-white text-foreground h-[50px] rounded-[8px] mt-[28px] text-[20px]">Download</button>
+                </motion.div>
+                <motion.div
+                    className="grid md:grid-cols-2 mt-10 xl:mt-0 w-full max-w-[650px] gap-[50px]"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    transition={{ duration: 1 }}
+                    variants={rightVariants}
+                >
+                    {items.map((item, index) => (
+                        <div key={index} className="border items-center xl:items-start border-white rounded-[12px] col-span-1 py-[21px] px-[20px] flex flex-col gap-[15px]">
+                            <Image src={item.icon} alt={item.title} width={50} height={50} />
+                            <h3 className="text-[16px] font-bold">{item.title}</h3>
+                            <p className="text-[14px]">{item.description}</p>
+                        </div>
+                    ))}
+                </motion.div>
+            </section>
+        </>
+    );
+}
+
+export default Advantages;
