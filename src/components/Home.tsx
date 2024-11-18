@@ -65,20 +65,20 @@ const Home = () => {
                         <a href="#faq" onClick={toggleMenu}>FAQ</a>
                     </li>
                 </ul>
-                <button onClick={toggleMenu} className='fixed top-6 right-6'>
-                    <img src='/close.svg'></img>
+                <button name='Close Menu' onClick={toggleMenu} className='fixed top-6 right-6'>
+                    <img alt='Fortnite Saturn Swapper v2 SkinChanger Close Menu' src='/close.svg'></img>
                 </button>
             </motion.nav>
             <section className="min-h-screen min-w-screen bg-gradient-to-t from-background to-foreground">
                 <div className="cont pt-[200px] w-full flex flex-col md:flex-row items-center justify-between min-h-[100vh] mx-auto">
-                    <div className="flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
                         <h1 className="text-[48px] md:text-[64px] font-bold">Saturn<br></br>Swapper</h1>
                         <p className="text-[16px] md:text-[20px] mt-[16px]">Fortnite Chapter 5 Season 2</p>
                         <p className="text-[16px] md:text-[20px] mt-[10px]">Play with the Rarest Skins!</p>
                         <button className="w-full hover:bg-second hover:text-white transition-all bg-white text-foreground h-[50px] rounded-[8px] mt-[28px] text-[20px]">Download</button>
                     </div>
                     <div>
-                        <Image loading='lazy' src="/home.png" alt="Fortnite Saturn Swapper v2 SkinChanger Download" />
+                        <Image src="/home.png" alt="Fortnite Saturn Swapper v2 SkinChanger Download" />
                     </div>
                 </div>
                 <div className="max-w-[850px] w-full mx-auto mt-10 md:mt-0">
