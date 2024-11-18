@@ -78,7 +78,7 @@ const Home = () => {
                         <button className="w-full hover:bg-second hover:text-white transition-all bg-white text-foreground h-[50px] rounded-[8px] mt-[28px] text-[20px]">Download</button>
                     </div>
                     <div>
-                        <Image src="/home.png" alt="Fortnite Saturn Swapper v2 SkinChanger Download" />
+                        <Image loading='eager' src="/home.png" alt="Fortnite Saturn Swapper v2 SkinChanger Download" />
                     </div>
                 </div>
                 <div className="max-w-[850px] w-full mx-auto mt-10 md:mt-0">
