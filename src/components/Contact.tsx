@@ -66,7 +66,7 @@ const Contact = () => {
                 variants={variants}
             >
                 <h2 className="text-[20px] font-bold">Need Help? Contact Support</h2>
-                <p className="max-w-[562px] w-full text-[15px] text-center">If you have any questions or need assistance with the Skinchanger, our support team is here to help! Reach out to us, and we'll get back to you as quickly as possible.</p>
+                <p className="max-w-[562px] w-full text-[15px] text-center">If you have any questions or need assistance with the Skinchanger, our support team is here to help! Reach out to us, and we&apos;ll get back to you as quickly as possible.</p>
                 <button className="w-full max-w-[562px] hover:bg-main hover:text-white transition-all bg-white text-second h-[50px] rounded-[8px] mt-[28px] text-[16px]" onClick={() => setIsOpen(true)}>Contact Support</button>
             </motion.div>
         </section>
