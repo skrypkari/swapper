@@ -5,21 +5,30 @@ import Modal from "@/components/ui/Modal";
 import Rating from "@/components/ui/Rating";
 import ReviewCards from "@/components/ui/Reviews";
 
+interface Review {
+    date: Date;
+    rating: number;
+    nickname: string;
+    review: string;
+}
+
 const Reviews = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [rating, setRating] = useState(0);
     const [nickname, setNickname] = useState('');
     const [reviewText, setReviewText] = useState('');
     const [error, setError] = useState('');
-    const [reviews, setReviews] = useState<{ rating: number; nickname: string; review: string; }[]>([]);
+
+    const [reviews, setReviews] = useState<Review[]>([]);
 
     useEffect(() => {
+        const now = new Date();
         const storedReviews = localStorage.getItem('reviews');
         setReviews(storedReviews ? JSON.parse(storedReviews) : [
-            { rating: 5, nickname: "EpicGamer92", review: "SaturnSwapper completely changed the way I play Fortnite. The interface is super intuitive, and it takes just a few seconds to swap skins. It's a must-have for anyone looking to spice up their game." },
-            { rating: 4.5 , nickname: "Frostbite_x", review: "SaturnSwapper is a solid tool. I like the variety of skins it offers, but sometimes it takes a while to load the new skins. Still, it's worth the wait, and it definitely adds a lot of fun to my Fortnite sessions." },
-            { rating: 5, nickname: "ProPlayerX", review: "I've tried several skin changers, but SaturnSwapper is hands down the best. It’s fast, reliable, and there’s no lag. I can change skins mid-game, and it works flawlessly every time. Highly recommend!" },
-            { rating: 4, nickname: "SkyHighGamer", review: "SaturnSwapper is great, but it could be even better with more customization options. Still, it’s very easy to use and has a wide selection of skins. I really enjoy using it for my Fortnite matches!" }
+            { date: new Date(now.getTime() - 6 * 60 * 60 * 1000), rating: 5, nickname: "EpicGamer92", review: "SaturnSwapper completely changed the way I play Fortnite. The interface is super intuitive, and it takes just a few seconds to swap skins. It's a must-have for anyone looking to spice up their game." },
+            { date: new Date(now.getTime() - 12 * 60 * 60 * 1000), rating: 5, nickname: "Frostbite_x", review: "SaturnSwapper is a solid tool. I like the variety of skins it offers, but sometimes it takes a while to load the new skins. Still, it's worth the wait, and it definitely adds a lot of fun to my Fortnite sessions." },
+            { date: new Date(now.getTime() - 15 * 60 * 60 * 1000), rating: 5, nickname: "ProPlayerX", review: "I've tried several skin changers, but SaturnSwapper is hands down the best. It’s fast, reliable, and there’s no lag. I can change skins mid-game, and it works flawlessly every time. Highly recommend!" },
+            { date: new Date(now.getTime() - 22 * 60 * 60 * 1000), rating: 5, nickname: "SkyHighGamer", review: "SaturnSwapper is great, but it could be even better with more customization options. Still, it’s very easy to use and has a wide selection of skins. I really enjoy using it for my Fortnite matches!" }
         ]);
     }, []);
 
@@ -34,7 +43,7 @@ const Reviews = () => {
             return;
         }
 
-        const newReview = { rating, nickname, review: reviewText };
+        const newReview = { date: new Date(), rating, nickname, review: reviewText };
         const updatedReviews = [newReview, ...reviews.slice(0, -1)];
 
         setReviews(updatedReviews);
@@ -50,6 +59,19 @@ const Reviews = () => {
     const variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
+    };
+
+    const formatTimeAgo = (date: string | number | Date) => {
+        const now = new Date();
+        const diffInMs = now.getTime() - new Date(date).getTime();
+        const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
+        const diffInHours = Math.floor(diffInMs / (1000 * 60 * 60));
+
+        if (diffInMinutes < 60) {
+            return `${diffInMinutes} minutes ago`;
+        }
+
+        return `${diffInHours} hours ago`;
     };
 
     return (
@@ -103,7 +125,7 @@ const Reviews = () => {
                 transition={{ duration: 1 }}
                 variants={variants}
             >
-                <ReviewCards reviews={reviews}/>
+                <ReviewCards reviews={reviews.map(review => ({ ...review, date: formatTimeAgo(review.date) }))}/>
             </motion.div>
             <motion.div
                 className="flex flex-col lg:flex-row w-full max-w-[954px] items-center gap-[20px]"

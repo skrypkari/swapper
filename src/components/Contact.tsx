@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Modal from './ui/Modal';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +22,17 @@ const Contact = () => {
             setError('All fields are required');
             return;
         }
-        // Handle form submission logic here
+        setIsOpen(false);
+        toast('Message sent successfully', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
         setError('');
         setSubmitted(true);
     }
@@ -32,8 +44,22 @@ const Contact = () => {
 
     return (
         <section className="pt-[110px] min-w-screen cont mx-auto flex flex-col items-center gap-[50px] justify-center">
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Bounce}
+            />
             <Modal onClose={onClosed} isOpen={isOpen}>
-                <h4 className="font-bold text-[24px] text-center w-full">Leave a review</h4>
+                <h4 className="font-bold text-[24px] text-center w-full">Contact Us</h4>
+                <p className='text-[12px] mt-5 text-white/70 text-center'>Use the form below to contact our support team. Please allow up to 48 hours for a response to your inquiry.</p>
                 {error && <p className="text-red-500 text-center">{error}</p>}
                 <input
                     className="bg-white/10 outline-0 appearance-none text-white placeholder:text-white/80 ring-0 w-full h-[50px] rounded mt-5 px-5"
@@ -44,7 +70,7 @@ const Contact = () => {
                 />
                 <input
                     className="bg-white/10 outline-0 appearance-none text-white placeholder:text-white/80 ring-0 w-full h-[50px] rounded mt-5 px-5"
-                    maxLength={16}
+                    maxLength={64}
                     placeholder="Your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

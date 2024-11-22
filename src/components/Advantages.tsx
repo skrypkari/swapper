@@ -50,7 +50,6 @@ const Advantages = () => {
                     <h2 className="text-[36px] md:text-[48px] font-bold">Advantages</h2>
                     <p className="text-[24px] md:text-[32px] font-bold mt-[50px]">Why Choose<br />SaturnSwapper?</p>
                     <p className="md:text-[20px] mt-[20px]">Unlimited skins, easy setup, and top security—customize your Fortnite experience with no risk to your account!</p>
-                    <button className="w-full hover:bg-second hover:text-white transition-all bg-white text-foreground h-[50px] rounded-[8px] mt-[28px] text-[20px]">Download</button>
                 </motion.div>
                 <motion.div
                     className="grid md:grid-cols-2 mt-10 xl:mt-0 w-full max-w-[650px] gap-[50px]"

@@ -9,7 +9,7 @@ const Faq = () => {
     };
 
     return (
-        <section id='faq' className="pt-[110px] pb-[55px] min-w-screen cont mx-auto flex flex-col items-center gap-[50px] justify-center">
+        <section id='faq' className="pt-[110px] pb-[115px] min-w-screen cont mx-auto flex flex-col items-center gap-[50px] justify-center">
             <motion.h2
                 className="text-[48px] font-bold"
                 initial="hidden"
