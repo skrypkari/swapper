@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Head from "next/head";
 import { Unbounded } from "next/font/google";
 
 const unbounded = Unbounded({subsets: ["latin"]});
