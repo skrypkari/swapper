@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-
+import Image from 'next/image';
 interface StarRatingProps {
     rating: number;
     onRatingChange: Dispatch<SetStateAction<number>>;
@@ -50,7 +50,9 @@ const Rating = ({ rating, onRatingChange }: StarRatingProps) => {
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <img
+                    <Image
+                        width={19}
+                        height={18}
                         src={renderStar(index)}
                         className="absolute top-0 left-0 w-full h-full"
                         alt="Star"

@@ -1,6 +1,7 @@
 'use client'
 
 import Marq from "react-fast-marquee";
+import Image from 'next/image';
 
 const items = [
     {
@@ -48,7 +49,7 @@ const Marquee = () => {
             {items.map((item, index) => (
                 <div key={index} className="px-4 mr-5 py-2 gap-5 bg-black/40 border border-white/5 rounded-lg flex items-center">
                     <div className="w-14 h-14 rounded-full overflow-hidden border border-white/10">
-                        <img className="rounded" src={item.image} alt={item.name} />
+                        <Image width={56} height={56} className="rounded" src={item.image} alt={item.name} />
                     </div>
                     <p>{item.name}</p>
                 </div>

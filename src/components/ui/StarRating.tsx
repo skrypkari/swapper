@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const StarRating = ({ rating }: {rating: number}) => {
     const fullStars = Math.floor(rating);
@@ -8,11 +9,11 @@ const StarRating = ({ rating }: {rating: number}) => {
     return (
         <div className="flex items-center gap-[5px]">
             {[...Array(fullStars)].map((_, index) => (
-                <img key={index} src="/star.svg" className="w-[20px] h-[20px]" alt="Full Star" />
+                <Image width={20} height={20} key={index} src="/star.svg" className="w-[20px] h-[20px]" alt="Full Star" />
             ))}
-            {halfStars === 1 && <img src="/halfstar.svg" className="w-[20px] h-[20px]" alt="Half Star" />}
+            {halfStars === 1 && <Image width={20} height={20} src="/halfstar.svg" className="w-[20px] h-[20px]" alt="Half Star" />}
             {[...Array(emptyStars)].map((_, index) => (
-                <img key={index} src="/emptystar.svg" className="w-[20px] h-[20px]" alt="Empty Star" />
+                <Image width={20} height={20} key={index} src="/emptystar.svg" className="w-[20px] h-[20px]" alt="Empty Star" />
             ))}
         </div>
     );

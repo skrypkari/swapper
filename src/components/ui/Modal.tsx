@@ -1,6 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 interface ModalProps {
     isOpen: boolean;
@@ -40,7 +41,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
                         transition={{ duration: 0.3 }}
                     >
                         <button className="absolute top-4 right-4" onClick={onClose}>
-                            <img src="/close.svg" alt="Close" />
+                            <Image width={19} height={18} src="/close.svg" alt="Close" />
                         </button>
                         {children}
                     </motion.div>

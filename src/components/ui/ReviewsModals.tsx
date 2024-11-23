@@ -46,11 +46,6 @@ const ReviewsModals = () => {
         setError('');
     };
 
-    const variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 }
-    };
-
     const formatTimeAgo = (date: string | number | Date) => {
         const now = new Date();
         const diffInMs = now.getTime() - new Date(date).getTime();
