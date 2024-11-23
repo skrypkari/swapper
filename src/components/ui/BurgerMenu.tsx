@@ -20,7 +20,7 @@ const BurgerMenu = () => {
     return (
         <>
             <button className="lg:hidden" onClick={toggleMenu}>
-                <Image src="/menu.svg" alt="Fortnite Saturn Swapper v2 SkinChanger Menu" />
+                <Image width={22} height={19} src="/menu.svg" alt="Fortnite Saturn Swapper v2 SkinChanger Menu" />
             </button>
             {isClient && isOpen && ReactDOM.createPortal(
                 <motion.nav
@@ -50,7 +50,7 @@ const BurgerMenu = () => {
                         </li>
                     </ul>
                     <button name='Close Menu' onClick={toggleMenu} className='fixed top-6 right-6'>
-                        <img alt='Fortnite Saturn Swapper v2 SkinChanger Close Menu' src='/close.svg'></img>
+                        <Image alt='Fortnite Saturn Swapper v2 SkinChanger Close Menu' src='/close.svg'/>
                     </button>
                 </motion.nav>,
                 document.body

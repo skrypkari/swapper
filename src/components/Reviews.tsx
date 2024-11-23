@@ -12,7 +12,7 @@ const Reviews = () => {
                 <h2 className="text-[48px] font-bold">Reviews</h2>
                 <div className="flex items-center absolute -right-2 -bottom-2 translate-x-full -translate-y-full">
                     <span className="text-sm">4.9</span>
-                    <Image src="/star.svg" className="w-[12px] pl-[3px] h-[11px]" alt="Saturn Swapper v2 Fortnite Skinchanger Reviews" />
+                    <Image height={11} width={12} src="/star.svg" className="w-[12px] pl-[3px] h-[11px]" alt="Saturn Swapper v2 Fortnite Skinchanger Reviews" />
                 </div>
             </div>
             <div

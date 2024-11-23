@@ -44,12 +44,6 @@ const items = [
 const Marquee = () => {
 
     return(
-        // <div className="px-4 py-2 gap-5 bg-black/40 border border-white/5 rounded flex items-center">
-        //     <div className="w-14 h-14 rounded border border-white/10">
-        //         <img className="rounded" src="/moonknight.webp" alt="Fortnite Saturn Swapper v2 SkinChanger Logo" />
-        //     </div>
-        //     <p>Moon Knight</p>
-        // </div>
         <Marq autoFill={true}>
             {items.map((item, index) => (
                 <div key={index} className="px-4 mr-5 py-2 gap-5 bg-black/40 border border-white/5 rounded-lg flex items-center">

@@ -7,7 +7,7 @@ const Home = () => {
             <header className="fixed bg-black/80 backdrop-blur-sm w-full">
                 <div className="flex py-[20px] gap-2 items-center justify-between cont mx-auto">
                     <div className="flex items-center space-x-[5px]">
-                        <Image src="/logo.svg" alt="Fortnite Saturn Swapper v2 SkinChanger Logo" className="h-[20px]" />
+                        <Image height={20} width={20} src="/logo.svg" alt="Fortnite Saturn Swapper v2 SkinChanger Logo" className="h-[20px]" />
                         <span className="text-[24px]">Saturn Swapper</span>
                     </div>
                     <nav className="hidden lg:block">

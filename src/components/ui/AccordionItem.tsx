@@ -19,6 +19,8 @@ const AccordionItem = ({ question, answer }: AccordionItemProps) => {
             <div className="flex items-center justify-between cursor-pointer" onClick={toggleAccordion}>
                 <p className="text-[20px]">{question}</p>
                 <motion.img
+                    width={16}
+                    height={10}
                     src='/down.svg'
                     className={`transition-all ${isOpen ? 'rotate-180' : ''}`}
                     alt="Toggle"

@@ -21,7 +21,7 @@ export default function Home() {
         <div className='cont mx-auto flex flex-col md:flex-row items-center md:items-start justify-between w-full'>
           <div className='flex flex-col items-center text-center md:items-start md:text-left gap-[20px]'>
             <div className='flex items-center gap-[5px]'>
-              <Image src='/logo.svg' alt='Fortnite Saturn Swapper v2 SkinChanger Logo' className='h-[20px]' />
+              <Image height={20} width={20} src='/logo.svg' alt='Fortnite Saturn Swapper v2 SkinChanger Logo' className='h-[20px]' />
               <span className='text-[24px]'>Saturn Swapper</span>
             </div>
             <p className='text-[15px]'>Play with the best free skin changer, Saturn Swapper!</p>
@@ -32,7 +32,7 @@ export default function Home() {
               <p className='text-[16px]'>Contact us: </p>
               <div className='flex items-center gap-[10px]'>
                 <a href='mailto:info@saturn.com'>
-                  <Image src='/logo.svg' alt='Email' />
+                  <Image height={20} width={20} src='/logo.svg' alt='Email' />
                 </a>
                 <p>info@saturn.com</p>
               </div>
