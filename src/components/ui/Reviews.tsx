@@ -14,10 +14,9 @@ interface ReviewsProps {
 
 const Reviews = ({ reviews }: ReviewsProps) => {
 
-    console.log(reviews)
     return (
         <>
-            {reviews.map((review, index) => (
+            {reviews.slice(0, 4).map((review, index) => (
                 <div key={index} className="border col-span-1 border-white rounded-[12px] p-[25px] min-h-[200px] max-w-[460px] flex flex-col">
                     <div className='flex items-center justify-between'>
                         <div className="flex items-center gap-[10px]">

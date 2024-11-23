@@ -1,5 +1,3 @@
-'use client';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const Advantages = () => {
@@ -25,39 +23,18 @@ const Advantages = () => {
             description: 'Using rare skins can boost your confidence, making you feel part of an elite group with exclusive content.'
         }
     ];
-
-    const leftVariants = {
-        hidden: { opacity: 0, x: 20 },
-        visible: { opacity: 1, x: 0 }
-    };
-
-    const rightVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 }
-    };
-
     return (
         <>
             <section id="advantages" className="px-1 pt-[110px] min-w-screen cont mx-auto flex gap-5 flex-col xl:flex-row items-center text-center xl:text-left xl:items-start justify-between">
-                <motion.div
+                <div
                     className="max-w-[480px]"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                    transition={{ duration: 1 }}
-                    variants={leftVariants}
                 >
                     <h2 className="text-[36px] md:text-[48px] font-bold">Advantages</h2>
                     <p className="text-[24px] md:text-[32px] font-bold mt-[50px]">Why Choose<br />SaturnSwapper?</p>
                     <p className="md:text-[20px] mt-[20px]">Unlimited skins, easy setup, and top security—customize your Fortnite experience with no risk to your account!</p>
-                </motion.div>
-                <motion.div
+                </div>
+                <div
                     className="grid md:grid-cols-2 mt-10 xl:mt-0 w-full max-w-[650px] gap-[50px]"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                    transition={{ duration: 1 }}
-                    variants={rightVariants}
                 >
                     {items.map((item, index) => (
                         <div key={index} className="border items-center xl:items-start border-white rounded-[12px] col-span-1 py-[21px] px-[20px] flex flex-col gap-[15px]">
@@ -66,7 +43,7 @@ const Advantages = () => {
                             <p className="text-[14px]">{item.description}</p>
                         </div>
                     ))}
-                </motion.div>
+                </div>
             </section>
         </>
     );

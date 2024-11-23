@@ -24,19 +24,19 @@ const Rating = ({ rating, onRatingChange }: StarRatingProps) => {
     const renderStar = (index: number) => {
         if (hoverRating !== null) {
             if (hoverRating >= index) {
-                return '/star.svg'; // Полная звезда при наведении
+                return '/star.svg'; 
             } else if (hoverRating >= index - 0.5) {
-                return '/halfstar.svg'; // Половинная звезда при наведении
+                return '/halfstar.svg';
             } else {
-                return '/emptystar.svg'; // Пустая звезда при наведении
+                return '/emptystar.svg';
             }
         } else {
             if (rating >= index) {
-                return '/star.svg'; // Полная звезда при выборе
+                return '/star.svg'; 
             } else if (rating >= index - 0.5) {
-                return '/halfstar.svg'; // Половинная звезда при выборе
+                return '/halfstar.svg'; 
             } else {
-                return '/emptystar.svg'; // Пустая звезда при выборе
+                return '/emptystar.svg';
             }
         }
     };
