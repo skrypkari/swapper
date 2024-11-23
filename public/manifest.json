@@ -1,0 +1,14 @@
+{
+    "name": "Saturn Swapper",
+    "short_name": "SaturnSwapper",
+    "description": "Download free fortnite skinchanger Saturn Swapper now and transform your Fortnite experience.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0C0C0C",
+    "theme_color": "#17092B",
+    "icons": [{
+        "src": "/icon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    }]
+}

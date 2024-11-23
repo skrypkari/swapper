@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Head from "next/head";
+import { Unbounded } from "next/font/google";
 
+const unbounded = Unbounded({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Saturn Swapper - Download the Fortnite Skin Changer!",
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Saturn Swapper - Download the Fortnite Skin Changer!",
     images: [
       {
-        url: "https://www.saturnswapper.com/og-image.jpg",
+        url: "https://www.saturnswapper.com/og_image.png",
         width: 1200,
         height: 630,
         alt: "Saturn Swapper",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     description: "Welcome to the heart of the gaming revolution! Download Saturn Swapper now and transform your Fortnite experience. Our cutting-edge skin changer opens the",
     images: [
       {
-        url: "https://www.saturnswapper.com/twitter-image.jpg",
+        url: "https://www.saturnswapper.com/twitter-image.png",
         alt: "Saturn Swapper",
       },
     ],
@@ -45,20 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Head>
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
-          as="style"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <html lang="en">
         <body
-          className={`antialiased bg-background`}
+          className={`antialiased bg-background ${unbounded.className}`}
         >
           {children}
         </body>
