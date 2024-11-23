@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Head from "next/head";
 
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   keywords: "saturn swapper, saturn swapper download, saturn swapper fortnite, saturnswapper, fortnite skin swapper, fortnite skin changer, galaxy swapper, fortnite skinchanger, galaxy swapper v2, galaxyswapper, galaxie swapper",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
   robots: "index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
-  openGraph:{
+  openGraph: {
     title: "Saturn Swapper - Download the Fortnite Skin Changer!",
     description: "Welcome to the heart of the gaming revolution! Download Saturn Swapper now and transform your Fortnite experience. Our cutting-edge skin changer opens the",
     type: "website",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter:{
+  twitter: {
     card: "summary_large_image",
     title: "Saturn Swapper - Download the Fortnite Skin Changer!",
     description: "Welcome to the heart of the gaming revolution! Download Saturn Swapper now and transform your Fortnite experience. Our cutting-edge skin changer opens the",
@@ -43,12 +44,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`antialiased bg-background`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+      <Head>
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+          as="style"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <html lang="en">
+        <body
+          className={`antialiased bg-background`}
+        >
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
